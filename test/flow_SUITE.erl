@@ -27,7 +27,7 @@ groups() ->
 %% Tests.
 
 default_flow_http(_) ->
-	doc("Confirm flow control default can be changed and overriden for HTTP/1.1."),
+	doc("Confirm flow control default can be changed and overridden for HTTP/1.1."),
 	{ok, _} = cowboy:start_clear(?FUNCTION_NAME, [], #{env => #{
 		dispatch => cowboy_router:compile([{'_', [{"/", sse_clock_h, date}]}])
 	}}),
@@ -59,7 +59,7 @@ default_flow_http(_) ->
 	end.
 
 default_flow_http2(_) ->
-	doc("Confirm flow control default can be changed and overriden for HTTP/2."),
+	doc("Confirm flow control default can be changed and overridden for HTTP/2."),
 	{ok, _} = cowboy:start_clear(?FUNCTION_NAME, [], #{env => #{
 		dispatch => cowboy_router:compile([{'_', [{"/", sse_clock_h, 40000}]}])
 	}}),
